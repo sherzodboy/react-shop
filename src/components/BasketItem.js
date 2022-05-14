@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
 export default function BasketItem(props) {
   const { id, name, price, quantity, incrementQuantity, decrementQuantity } =
     props;
+
+  const { example } = useContext(ShopContext);
+  console.log(example);
+
   return (
     <li className="collection-item">
       {name} x {quantity} = {price * quantity} <b>$</b>
